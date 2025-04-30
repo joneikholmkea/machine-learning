@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ML Exam Project Ideas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f9fc;
+    }
+    .slide {
+      display: none;
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-top: 40px;
+    }
+    .slide.active {
+      display: block;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    a {
+      color: #3498db;
+    }
+    .nav {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .nav button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background: #3498db;
+      color: white;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide active">
+    <h1>ML Exam Project: Detect Anomalies in IoT or Network Traffic</h1>
+    <p>Use ML to identify unusual behavior in time-series or network data.</p>
+    <h2>Techniques:</h2>
+    <ul>
+      <li>Isolation Forest, DBSCAN, Autoencoders</li>
+      <li>Time-series preprocessing</li>
+    </ul>
+    <h2>Datasets:</h2>
+    <ul>
+      <li><a href="https://www.kaggle.com/datasets/behrad3d/nasa-cmaps" target="_blank">NASA CMAPSS - Turbofan Engine Degradation</a></li>
+      <li><a href="https://www.kaggle.com/datasets/anushonkar/network-anamoly-detection" target="_blank">Network Anomaly Detection Dataset</a></li>
+    </ul>
+  </div>
+
+  <div class="slide">
+    <h1>Classify Domain-Specific Images</h1>
+    <p>Train a model to recognize images in a niche field such as agriculture or manufacturing.</p>
+    <h2>Techniques:</h2>
+    <ul>
+      <li>CNNs or Transfer Learning</li>
+      <li>Image augmentation</li>
+    </ul>
+    <h2>Datasets:</h2>
+    <ul>
+      <li><a href="https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset" target="_blank">Plant Disease Dataset</a></li>
+      <li><a href="https://www.kaggle.com/datasets/fantacher/neu-metal-surface-defects-data" target="_blank">Metal Defect Detection Dataset</a></li>
+    </ul>
+  </div>
+
+  <div class="slide">
+    <h1>Predict Machine Failure</h1>
+    <p>Predict when a machine will fail based on operational sensor data.</p>
+    <h2>Techniques:</h2>
+    <ul>
+      <li>Classification or regression</li>
+      <li>Time-series analysis</li>
+    </ul>
+    <h2>Datasets:</h2>
+    <ul>
+      <li><a href="https://www.kaggle.com/datasets/hiimanshuagarwal/predictive-maintenance-dataset" target="_blank">Predictive Maintenance Dataset</a></li>
+      <li><a href="https://www.kaggle.com/datasets/mayurgadekar5555/industrial-equipment-maintenance-data" target="_blank">Equipment Maintenance Records</a></li>
+    </ul>
+  </div>
+
+  <div class="slide">
+    <h1>Build a Dynamic Pricing Model</h1>
+    <p>Optimize product pricing in real time based on demand and inventory data.</p>
+    <h2>Techniques:</h2>
+    <ul>
+      <li>Linear/Tree-based regression</li>
+      <li>Bandit algorithms or RL (optional)</li>
+    </ul>
+    <h2>Datasets:</h2>
+    <ul>
+      <li><a href="https://www.kaggle.com/datasets/kyanyoga/sample-sales-data" target="_blank">Sales Data for Pricing</a></li>
+      <li><a href="https://www.kaggle.com/datasets/sudalairajkumar/daily-temperature-of-major-cities" target="_blank">Use for simulated seasonality pricing</a></li>
+    </ul>
+  </div>
+
+  <div class="slide">
+    <h1>Predict Customer Churn</h1>
+    <p>Use behavior and usage data to predict which users will leave a service.</p>
+    <h2>Techniques:</h2>
+    <ul>
+      <li>Binary classification</li>
+      <li>Feature engineering</li>
+    </ul>
+    <h2>Datasets:</h2>
+    <ul>
+      <li><a href="https://www.kaggle.com/datasets/blastchar/telco-customer-churn" target="_blank">Telco Customer Churn</a></li>
+      <li><a href="https://www.kaggle.com/datasets/nastaranzandi/customer-churn-dataset-for-a-retail-industry" target="_blank">Customer Churn dataset for a Retail Industry</a></li>
+    </ul>
+  </div>
+
+  <div class="slide">
+    <h1>Create a Music Recommendation System</h1>
+    <p>Suggest songs using user preferences or audio features.</p>
+    <h2>Techniques:</h2>
+    <ul>
+      <li>Collaborative filtering</li>
+      <li>Clustering or cosine similarity</li>
+    </ul>
+    <h2>Datasets:</h2>
+    <ul>
+      <li><a href="https://www.kaggle.com/datasets/fcpercival/160k-spotify-songs-sorted" target="_blank">Spotify Dataset (160k Tracks)</a></li>
+      <li><a href="https://www.kaggle.com/datasets/meeraajayakumar/spotify-user-behavior-dataset" target="_blank">Spotify User Behavior</a></li>
+    </ul>
+  </div>
+
+  <div class="nav">
+    <button onclick="prevSlide()">Previous</button>
+    <button onclick="nextSlide()">Next</button>
+  </div>
+
+  <script>
+    let current = 0;
+    const slides = document.querySelectorAll('.slide');
+    function showSlide(index) {
+      slides.forEach((s, i) => s.classList.toggle('active', i === index));
+    }
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+  </script>
+</body>
+</html>
